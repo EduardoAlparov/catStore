@@ -34,7 +34,7 @@
         }
 
         &::after {
-            content: url('../../images/arrow.svg');
+            content: url('./images/arrow.svg');
             position: absolute;
             right: -30px;
             top: 3px;
