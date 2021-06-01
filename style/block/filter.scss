@@ -47,7 +47,7 @@
             display: none;
 
             &::after {
-                content: url('../../images/arrow.svg');
+                content: url('./images/arrow.svg');
                 transform: rotate(180deg);
                 position: absolute;
                 right: -30px;
@@ -62,7 +62,7 @@
             display: none;
 
             &::after {
-                content: url('../../images/arrow.svg');
+                content: url('./images/arrow.svg');
                 transform: rotate(180deg);
                 position: absolute;
                 right: -30px;
