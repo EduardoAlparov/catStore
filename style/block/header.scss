@@ -1,0 +1,112 @@
+.header {
+    max-width: 100%;
+    min-height: 252px;
+    overflow: hidden;
+    background: linear-gradient(to top, rgba(255,255,250,0.21), rgba(255,255,255,0.21)), url(./images/headcat.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    @include desktop {
+        min-height: 180px;
+    }
+}
+
+.header-main-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding-top: 40px;
+    margin-bottom: 50px;
+
+    &__logo {
+        margin-right: 120px;
+        @include tablets {
+            margin-right: 0;
+        }
+    }
+
+    &__menu {
+        margin-right: auto;
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__contacts {
+        @include desktop {
+            margin-left: auto;
+        }
+    }
+
+    &__hidden-menu {
+        display: none;
+        @include desktop {
+            display: block;
+            margin-left: 30px;
+        }
+    }
+}
+
+.logo-block{
+    width: 78px;
+    height: 50px;
+}
+
+
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    a{
+        display: block;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 5px;
+        @include desktop {
+            font-size: 18px;
+        }
+        @include tablets {
+            font-size: 14px;
+        }
+
+    }
+    span {
+        display: block;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: right;
+        @include desktop {
+            text-align: center;
+            font-size: 14px;
+        }
+        @include tablets {
+            font-size: 10px;
+        }
+    }
+}
+
+.header-find-cats{
+    &__info {
+        color :#fff;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 46px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        @include desktop {
+            font-size: 26px;
+        }
+    }
+}

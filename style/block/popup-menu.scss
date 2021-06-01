@@ -1,0 +1,40 @@
+.popup-menu {
+    position: fixed;
+    top: 150px;
+    right: 11111px;
+    background-color: #fff;
+    height: calc(100% - 150px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: right 1s linear;
+
+    &.active {
+        right: 0;
+    }
+
+    &__content{
+        // height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__menu {
+
+        .menu__list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu__item {
+            text-align: left;
+            margin: 0;
+        }
+        .menu__link {
+            text-align: left;
+        }
+    }
+}

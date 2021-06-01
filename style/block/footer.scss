@@ -1,0 +1,145 @@
+.footer {
+    max-width: 100%;
+    min-height: 252px;
+    overflow: hidden;
+    background-color: $footer;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__content  {
+        display: flex;
+        @include tablets {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__banner {
+        display: flex;
+        flex-direction: column;
+        flex: 2 0 0;
+        margin-right: 86px;
+        @include desktop {
+            margin-right: 0;
+        }
+        @include tablets {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.banner{
+
+    &__tagline{
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 59px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: white;
+        margin-bottom: 25px;
+        @include tablets {
+            font-size: 32px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    }
+    &__promotion{
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: white;
+        @include tablets {
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+}
+
+.subscription {
+    &__top{
+        display: flex;
+
+        @include desktop {
+            flex-direction: column;
+            align-items: flex-end;
+            margin-bottom: 15px;
+        }
+
+        @include tablets {
+            align-items: center;
+        }
+
+        &-input{
+            margin-right: 15px;
+            margin-bottom: 24px;
+            position: relative;
+            @include desktop {
+                margin-right: 0;
+            }
+        }    
+    }
+
+    &__error{
+        position: absolute;
+        bottom: 0;
+        left: 50px;
+        color: firebrick;
+        font-size: 14px;
+    }
+
+
+    &__input{
+        width: 300px;
+        height: 65px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        padding-left: 30px;
+        outline: none;
+
+        &:focus {
+            background-color: #ccc;
+        }
+    }
+    
+    &__button{
+        width: 250px;
+        height: 65px;
+        background: $accent;
+        border-radius: 10px;
+        transition: all 0.2s linear;
+
+
+        &:hover {
+            background: $hover-accent;
+        }
+        &:active {
+            border: 2px solid #000;
+        }
+    }
+
+    &__bottom{
+        @include desktop {
+            padding-left: 50px;
+        }
+
+        @include tablets {
+            padding-left: 30px;
+        }
+
+        span {
+            color: #fff;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+    }
+}

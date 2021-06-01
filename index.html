@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+<body>
+    <div class="mainwrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header-main-line">
+                    <div class="header-main-line__logo">
+                        <div class="logo-block">
+                            <img src="./images/logo.png" alt="логотип" class="logo-block__image">
+                        </div>
+                    </div>
+                    <div class="header-main-line__menu">
+                        <div class="menu">
+                            <ul class="menu__list">
+                                <li class="menu__item">
+                                    <a href="#" class="menu__link">Main</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="#" class="menu__link">Gallery</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="#" class="menu__link">News</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="#" class="menu__link">Profile</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-main-line__contacts">
+                        <div class="contacts">
+                            <a href="tel:+544 3490 00000" class="contacts__phone">+544 3490 00000</a>
+                            <span>Звони скорее!</span>
+                        </div>
+                    </div>
+                    <div class="header-main-line__hidden-menu">
+                        <button class="btn-menu" type="button">
+                            <i class="btn-menu__bars" aria-hidden="true"></i>
+                        </button>                        
+                    </div>
+                </div>
+                <div class="header-find-cats">
+                    <div class="header-find-cats__info">Найдено 349 котов</div>
+                </div>
+            </div>
+        </header>
+        <main class="section-main-content">
+            <div class="main-content">
+                <div class="container">
+                    <div class="main-content-block">
+                        <div class="main-content-block__filter">
+                            <div class="filter__desc">Сортировать по:</div>
+                            <a href="#" class="filter__button filter-price-sort">Цене</a>
+                            <a href="#" class="filter__button filter__button--price filter-price-sort">Цене</a>
+                            <a href="#" class="filter__button  filter-age-sort" >Возрасту</a>
+                            <a href="#" class="filter__button filter__button--age filter-age-sort" >Возрасту</a>
+                        </div>
+                        <div class="main-content-block__card-list">
+                            <div class="card">
+                                <ul class="card__list grid"></ul>
+                            </div>
+                        </div>
+                        <div class="main-content-block__show-button">
+                            <button class="show-button">Показать еще 20</button>
+                            <button class="up-button">
+                                <img src="./images/arrow-up.png" alt="arrow up" class="up-arrow__icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__banner">
+                        <div class="banner__tagline">Успей купить!</div>    
+                        <div class="banner__promotion">Подпишись и успей<br> словить все акции</div>    
+                    </div>
+                    <div class="footer__subscription">
+                        <form id="form_id" class="subscription__top">
+                            <div class="subscription__top-input">
+                                <input type="text" id="email" name="emial" placeholder="Email" class="subscription__input">
+                                <div class="subscription__error"></div>
+                            </div>
+                            <div class="subscription__top-button">
+                                <button type="submit" value="Submit" class="subscription__button">Подписаться</button>
+                            </div>
+                        </form>
+                        <div class="subscription__bottom">
+                            <subscription__bottom-input>
+                                <label class="control control-checkbox">
+                                    Подписаться на новости
+                                        <input type="checkbox" checked="checked" />
+                                    <div class="control_indicator"></div>
+                                </label>
+                            </subscription__bottom-input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="popup-menu">
+        <div class="popup-menu__content">
+            <div class="popup-menu__menu">
+                <div class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Main</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Gallery</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">News</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="cats-template" type="text/x-handlebars-template">
+        {{#each cats}}
+        <li class="card__item">
+            <div class="cat-card">
+                <div class="cat-card__image-container">
+                    <div class="image-block">
+                        <img src="{{photo}}" alt="cat-picture" loading="lazy" class="image-block__picture">
+                        {{#if discount}}
+                        <div class="image-block__discount">
+                            <div class="discount-block">
+                                <span>-40%</span>
+                            </div>
+                        </div>
+                        {{else}}
+                        {{/if}}
+                        <button class="image-block__like remove-like">
+                            <object class="image-block__svg" type="image/svg+xml" data="./images/like-grey.svg"></object>
+                        </button>
+                        <div class="image-block__like-text">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat-card__info-container">
+                    <div class="info-block">
+                        <div class="info-block__name-of-cat">
+                            <span>{{name}}</span>
+                        </div>
+                        <div class="info-block__descripton">
+                            <div class="description">
+                                <div class="description__color">
+                                    <span>{{color}}<br> окрас</span>
+                                </div>
+                                <div class="description__age">
+                                    <span class="age"><b>{{age}}</span><span>мес.</span></b><br>
+                                    <span>возраст</span>
+                                </div>
+                                <div class="description__numbers-of-paws">
+                                    <span><b>{{numbers-of-paws}}</b></span><br>
+                                    <span>кол-во лап</span>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="info-block__price">
+                            <span class="price">{{price}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat-card__button-container">
+                    {{#if sold}}
+                    <button class="card-button-block card-button-block--sold" disabled>Продан</button>
+                    {{else}}
+                    <button class="card-button-block">Купить</button>
+                    {{/if}}
+                </div>
+            </div>
+        </li>
+        {{/each}}    
+    </script>
+
+    <script src="/scripts/handlebars.js"></script>
+    <script src="/scripts/burger-btn.js"></script>
+    <script src="/scripts/filter.js"></script>
+    <script src="/scripts/like.js"></script>
+    <script src="/scripts/scroll-up-button.js"></script>
+    <script src="/scripts/validation.js"></script>
+
+</body>
+</html>

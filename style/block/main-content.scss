@@ -1,0 +1,110 @@
+.section-main-content {
+    height: 100%;
+}
+
+.main-content {
+    height: 100%;
+}
+
+.main-content-block {
+    height: 100%;
+
+    &__filter {
+        display: flex;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        @include tablets {
+            justify-content: center;
+        }
+    }
+
+    &__show-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        margin-bottom: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+
+.card{
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include tablets{
+
+        }
+
+
+        li {
+            min-width: fit-content;
+            width: calc(100%/3 - 46px);
+            margin-bottom: 25px;
+
+            @include desktop {
+                width: calc(100%/2 - 80px);
+            } 
+
+            @include tablets {
+                width: calc(100%);
+            }
+        }
+
+    }
+}
+
+.show-button{
+    width: 380px;
+    height: 65px;
+    border: 1px solid #CACACA;
+    border-radius: 10px;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:active {
+        border: 2px solid #000;
+    }
+}
+
+.up-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 59px;
+    height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $accent;
+
+    @include tablets {
+        width: 39px;
+        height: 39px;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &:hover {
+        background: $hover-accent;
+    }
+
+    &:active {
+        border: 2px solid #fff;
+    }
+
+    &__icon{
+        width: 18px;
+        height: 18px;
+        @include tablets{
+            width: 12px;
+            height: 12px;
+        }
+    }
+}

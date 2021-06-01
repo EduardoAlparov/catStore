@@ -1,0 +1,76 @@
+.filter {
+
+    &__desc {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-right: 48px;
+
+        @include tablets {
+            font-size: 14px;
+        }
+    }
+
+    &__button {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-right: 85px;
+        position: relative;
+        @include tablets {
+            font-size: 14px;
+            margin-right: 40px;
+            
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &::after {
+            content: url(../../images/arrow.svg);
+            position: absolute;
+            right: -30px;
+            top: 3px;
+            width: 15px;
+            height: 15px;
+            cursor: default;
+        }
+
+        &--age{
+            display: none;
+
+            &::after {
+                content: url(../../images/arrow.svg);
+                transform: rotate(180deg);
+                position: absolute;
+                right: -30px;
+                top: 6px;
+                width: 15px;
+                height: 15px;
+                cursor: default;
+            }
+        }
+
+        &--price{
+            display: none;
+
+            &::after {
+                content: url(../../images/arrow.svg);
+                transform: rotate(180deg);
+                position: absolute;
+                right: -30px;
+                top: 6px;
+                width: 15px;
+                height: 15px;
+                cursor: default;
+            }
+        }
+    }
+}
